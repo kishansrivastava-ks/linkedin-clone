@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linkedin Clone</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-notifications.css" />
+    <link rel="stylesheet" href="style-jobs.css" />
+    <link rel="stylesheet" href="style-network.css" />
+    <link rel="shortcut icon" type="image/png" href="images/tab-logo.png" />
+  </head>
+  <body>
+    <!-- -------NAVIGATION------- -->
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="" />
+        </a>
+
+        <div class="search-box">
+          <img src="images/search.png" />
+          <input type="text" placeholder="Search" />
+        </div>
+      </div>
+      <div class="navbar-center">
+        <ul class="nav_links">
+          <li id="home">
+            <a class="nav_link" href="#" class="active-link"
+              ><img src="images/home.png" /> <span>Home</span></a
+            >
+          </li>
+          <li id="network">
+            <a class="nav_link" href="#"
+              ><img src="images/network.png" /> <span>My Network</span></a
+            >
+          </li>
+          <li id="job">
+            <a class="nav_link" href="#"
+              ><img src="images/jobs.png" /> <span>Jobs</span></a
+            >
+          </li>
+          <li id="message">
+            <a class="nav_link" href="#"
+              ><img src="images/message.png" /> <span>Messaging</span></a
+            >
+          </li>
+          <li id="notification">
+            <a class="nav_link" href="#"
+              ><img src="images/notification.png" />
+              <span>Notifications</span></a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-right">
+        <div class="online">
+          <img
+            src="images/kishan.jpg"
+            class="nav-profile-img"
+            onclick="toggleMenu()"
+          />
+        </div>
+        <div>
+          <img id="grid" src="images/grid.png" />
+        </div>
+      </div>
+
+      <!-- ------profile dropdown menu------- -->
+      <div class="profile-menu-wrap" id="profileMenu">
+        <div class="profile-menu">
+          <div class="user-info">
+            <img src="images/kishan.jpg" alt="" />
+            <p>
+              <span> Kishan Srivastava </span><br />
+              Undergrad at Malviya National Institute of Technology, Jaipur
+            </p>
+          </div>
+          <button><a href="#">View Profile</a></button>
+          <hr style="margin-top: 1rem" />
+          <div class="account">
+            <ul>
+              <li>Account</li>
+              <li>Settings and Privacy</li>
+              <li>Help</li>
+              <li>Language</li>
+            </ul>
+          </div>
+          <hr style="margin-top: 1rem" />
+          <div class="account">
+            <ul>
+              <li>Manage</li>
+              <li>Post and Activity</li>
+              <li>Job Posting Account</li>
+            </ul>
+          </div>
+          <hr style="margin-top: 0.5rem" />
+          <div class="account sign-out">
+            <h5>Sign Out</h5>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- ---------NAVBAR CLOSE------- -->
+
+    <div class="container home-container">
+      <!-- --------left sidebar----- -->
+      <div class="left-sidebar">
+        <div class="sidebar-profile-box">
+          <img
+            style="
+              border-top-left-radius: 0.625rem;
+              border-top-right-radius: 0.625rem;
+            "
+            src="images/cover-pic.png"
+            width="100%"
+          />
+          <div class="sidebar-profile-info">
+            <img src="images/kishan.jpg" alt="" />
+            <h1>Kishan Srivastava</h1>
+            <h3>Undergrad at MNIT Jaipur</h3>
+            <hr style="margin-top: 1rem; width: 110%; margin-left: -1rem" />
+            <ul>
+              <li>Who's viewed your profile <span>52</span></li>
+              <li>Impressions of your post <span>810</span></li>
+            </ul>
+          </div>
+          <hr style="margin-top: 1rem; width: 94%; margin-left: 0.5rem" />
+          <div class="sidebar-profile-link">
+            <a href="#"> <img src="images/items.png" /> My items</a>
+            <a href="#"> <img src="images/premium.png" /> Try premeium</a>
+          </div>
+        </div>
+
+        <div class="sidebar-activity" id="sidebarActivity">
+          <!-- <h3>RECENT</h3> -->
+          <a href="#"> Groups</a>
+          <a href="#"> Events</a>
+          <a href="#"> Followed Hashtags</a>
+          <div class="discover-more-link">
+            <a href="#">Discover More</a>
+          </div>
+        </div>
+
+        <p id="showMoreLink" onclick="toggleActivity()">Show more <b>+</b></p>
+      </div>
+
+      <!-- ------main content---- -->
+      <div class="main-content main-content-home">
+        <div class="create-post">
+          <div class="create-post-input">
+            <img src="images/kishan.jpg" />
+            <div class="textarea openModalStartPost">Start a post</div>
+          </div>
+          <div class="create-post-links">
+            <li
+              style="border-bottom-left-radius: 0.625rem"
+              class="btn--show-modal-photo"
+            >
+              <img src="images/phto-icon.png" />Photo
+            </li>
+            <li class="btn--show-modal-video">
+              <img src="images/video-icon.png" />Video
+            </li>
+            <li class="btn--show-modal-job">
+              <img src="images/job-icon.png" />Job
+            </li>
+            <li
+              style="border-bottom-right-radius: 0.625rem"
+              class="btn--show-modal"
+            >
+              <img src="images/article.png" alt="" />
+              Write article
+            </li>
+          </div>
+        </div>
+
+        <div class="sort-by">
+          <hr />
+          <p>
+            Sort by : <span>top <img src="images/down-arrow.png" /></span>
+          </p>
+        </div>
+
+        <div class="post">
+          <div class="post-author">
+            <img src="images/user-3.png" />
+            <div>
+              <h1>Alexandra Johnson</h1>
+              <small>Founder and CEO at XYZ Company, India</small>
+              <small>2 hours ago</small>
+            </div>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ipsa
+            alias obcaecati aperiam dicta. Tempore dolorum magnam nihil, beatae
+            odit corrupti vitae veritatis asperiores, quasi libero optio ad
+            saepe officiis temporibus, minus voluptatibus quidem labore.
+          </p>
+          <img src="images/post-image-1.jpg" width="100%" />
+
+          <div class="post-stats">
+            <div>
+              <img src="images/thumbsup.png" />
+              <img src="images/love.png" />
+              <img src="images/clap.png" />
+              <span class="liked-user">Abhinav Mishra and 75 others</span>
+            </div>
+            <div>
+              <span>22 comments &middot; 40 shares</span>
+            </div>
+          </div>
+          <div class="post-activity">
+            <div>
+              <img src="images/kishan.jpg" class="post-activity-user-icon" />
+              <img
+                src="images/down-arrow.png"
+                class="post-activity-arrow-icon"
+              />
+            </div>
+            <div class="post-activity-link">
+              <img src="images/like.png" />
+              <span>Like</span>
+            </div>
+            <div class="post-activity-link">
+              <img src="images/comment.png" />
+              <span>Comment</span>
+            </div>
+            <div class="post-activity-link">
+              <img src="images/share.png" />
+              <span>Share</span>
+            </div>
+            <div class="post-activity-link">
+              <img src="images/send.png" />
+              <span>Send</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="post">
+          <div class="post-author">
+            <img src="images/user-4.png" />
+            <div>
+              <h1>Alexandra Johnson</h1>
+              <small>Founder and CEO at XYZ Company, India</small>
+              <small>2 hours ago</small>
+            </div>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ipsa
+            alias obcaecati aperiam dicta. Tempore dolorum magnam nihil, beatae
+            odit corrupti vitae veritatis asperiores, quasi libero optio ad
+            saepe officiis temporibus, minus voluptatibus quidem labore.
+          </p>
+          <img src="images/post-image-2.jpg" width="100%" />
+
+          <div class="post-stats">
+            <div>
+              <img src="images/thumbsup.png" />
+              <img src="images/love.png" />
+              <img src="images/clap.png" />
+              <span class="liked-user">Abhinav Mishra and 75 others</span>
+            </div>
+            <div>
+              <span>22 comments &middot; 40 shares</span>
+            </div>
+          </div>
+          <div class="post-activity">
+            <div>
+              <img src="images/kishan.jpg" class="post-activity-user-icon" />
+              <img
+                src="images/down-arrow.png"
+                class="post-activity-arrow-icon"
+              />
+            </div>
+            <div class="post-activity-link">
+              <img src="images/like.png" />
+              <span>Like</span>
+            </div>
+            <div class="post-activity-link">
+              <img src="images/comment.png" />
+              <span>Comment</span>
+            </div>
+            <div class="post-activity-link">
+              <img src="images/share.png" />
+              <span>Share</span>
+            </div>
+            <div class="post-activity-link">
+              <img src="images/send.png" />
+              <span>Send</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="post">
+          <div class="post-author">
+            <img src="images/user-3.png" />
+            <div>
+              <h1>Alexandra Johnson</h1>
+              <small>Founder and CEO at XYZ Company, India</small>
+              <small>2 hours ago</small>
+            </div>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ipsa
+            alias obcaecati aperiam dicta. Tempore dolorum magnam nihil, beatae
+            odit corrupti vitae veritatis asperiores, quasi libero optio ad
+            saepe officiis temporibus, minus voluptatibus quidem labore.
+          </p>
+          <img src="images/post-image-3.jpg" width="100%" />
+
+          <div class="post-stats">
+            <div>
+              <img src="images/thumbsup.png" />
+              <img src="images/love.png" />
+              <img src="images/clap.png" />
+              <span class="liked-user">Abhinav Mishra and 75 others</span>
+            </div>
+            <div>
+              <span>22 comments &middot; 40 shares</span>
+            </div>
+          </div>
+          <div class="post-activity">
+            <div>
+              <img src="images/kishan.jpg" class="post-activity-user-icon" />
+              <img
+                src="images/down-arrow.png"
+                class="post-activity-arrow-icon"
+              />
+            </div>
+            <div class="post-activity-link">
+              <img src="images/like.png" />
+              <span>Like</span>
+            </div>
+            <div class="post-activity-link">
+              <img src="images/comment.png" />
+              <span>Comment</span>
+            </div>
+            <div class="post-activity-link">
+              <img src="images/share.png" />
+              <span>Share</span>
+            </div>
+            <div class="post-activity-link">
+              <img src="images/send.png" />
+              <span>Send</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="post">
+          <div class="post-author">
+            <img src="images/user-4.png" />
+            <div>
+              <h1>Alexandra Johnson</h1>
+              <small>Founder and CEO at XYZ Company, India</small>
+              <small>2 hours ago</small>
+            </div>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ipsa
+            alias obcaecati aperiam dicta. Tempore dolorum magnam nihil, beatae
+            odit corrupti vitae veritatis asperiores, quasi libero optio ad
+            saepe officiis temporibus, minus voluptatibus quidem labore.
+          </p>
+          <img src="images/post-image-4.png" width="100%" />
+
+          <div class="post-stats">
+            <div>
+              <img src="images/thumbsup.png" />
+              <img src="images/love.png" />
+              <img src="images/clap.png" />
+              <span class="liked-user">Abhinav Mishra and 75 others</span>
+            </div>
+            <div>
+              <span>22 comments &middot; 40 shares</span>
+            </div>
+          </div>
+          <div class="post-activity">
+            <div>
+              <img src="images/kishan.jpg" class="post-activity-user-icon" />
+              <img
+                src="images/down-arrow.png"
+                class="post-activity-arrow-icon"
+              />
+            </div>
+            <div class="post-activity-link">
+              <img src="images/like.png" />
+              <span>Like</span>
+            </div>
+            <div class="post-activity-link">
+              <img src="images/comment.png" />
+              <span>Comment</span>
+            </div>
+            <div class="post-activity-link">
+              <img src="images/share.png" />
+              <span>Share</span>
+            </div>
+            <div class="post-activity-link">
+              <img src="images/send.png" />
+              <span>Send</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ------main content---- -->
+
+      <!-- --------right sidebar----- -->
+      <div class="right-sidebar">
+        <div class="sidebar-news">
+          <img src="images/more.png" class="info-icon" />
+          <h3>Linkedin News</h3>
+          <a href="#">Lorem ipsum dolor sit amet.</a>
+          <span>19h ago &middot; 10,934 readder</span>
+
+          <a href="#">Lorem ipsum dolor sit amet.</a>
+          <span>1d ago &middot; 10,934 readder</span>
+
+          <a href="#">Lorem ipsum dolor sit amet.</a>
+          <span>2d ago &middot; 10,934 readder</span>
+
+          <a href="#">Lorem ipsum dolor sit amet.</a>
+          <span>4d ago &middot; 10,934 readder</span>
+
+          <a href="#" class="read-more-link">Read More</a>
+        </div>
+
+        <div class="sidebar-ad">
+          <small>Ad &middot; &middot; &middot;</small>
+          <p>Master the 5 principles of web design</p>
+          <div>
+            <img src="images/kishan.jpg" alt="" />
+            <img src="images/mi-logo.png" alt="" />
+          </div>
+          <b>Brand and demand in Xiaomi</b>
+          <a href="#" class="ad-link">Learn More</a>
+        </div>
+
+        <div class="sidebar-useful-links">
+          <a href="#">About</a>
+          <a href="#">Accesibility</a>
+          <a href="#">Help Center</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Advertising</a>
+          <a href="#">Get the App</a>
+          <a href="#">More</a>
+          <div class="copyright-msg">
+            <img src="images/logo.png" />
+            <p>Linkedin &#169; 2023. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+      <!-- --------right sidebar----- -->
+    </div>
+
+    <!-- --------NETWORKS TAB------ -->
+    <div class="container network-container hidden--container">
+      <div class="left-sidebar">
+        <div class="manage-network">
+          <h3>Manage my network</h3>
+          <ul>
+            <li>
+              <div>
+                <img src="images/phto-icon.png" />
+                <h4>Connections</h4>
+              </div>
+              <div>397</div>
+            </li>
+            <li>
+              <div>
+                <img src="images/phto-icon.png" />
+                <h4>Contacts</h4>
+              </div>
+              <div>397</div>
+            </li>
+            <li>
+              <div>
+                <img src="images/phto-icon.png" />
+                <h4>Following and Followers</h4>
+              </div>
+              <div>397</div>
+            </li>
+            <li>
+              <div>
+                <img src="images/phto-icon.png" />
+                <h4>Groups</h4>
+              </div>
+              <div>397</div>
+            </li>
+            <li>
+              <div>
+                <img src="images/phto-icon.png" />
+                <h4>Events</h4>
+              </div>
+              <div>397</div>
+            </li>
+            <li>
+              <div>
+                <img src="images/phto-icon.png" />
+                <h4>Pages</h4>
+              </div>
+              <div>397</div>
+            </li>
+            <li>
+              <div>
+                <img src="images/phto-icon.png" />
+                <h4>Newsletters</h4>
+              </div>
+              <div>397</div>
+            </li>
+            <li>
+              <div>
+                <img src="images/phto-icon.png" />
+                <h4>Hashtags</h4>
+              </div>
+              <div>397</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="middle-content">
+        <div class="invitations">
+          <div class="head">
+            <h3>Invitations</h3>
+            <h3>See all 11</h3>
+          </div>
+          <div class="invitation-body">
+            <div style="display: flex; align-items: center">
+              <img src="images/priya.jpg" />
+              <div>
+                <h4>Page &middot; Marketing and Advertising</h4>
+                <h4>
+                  Clifton Jennings invited you to follow Jaipur SEO Company
+                </h4>
+              </div>
+            </div>
+            <div>
+              <button>Ignore</button>
+              <button>Accept</button>
+            </div>
+          </div>
+          <div class="invitation-body">
+            <div style="display: flex; align-items: center">
+              <img src="images/priya.jpg" />
+              <div>
+                <h4>Page &middot; Marketing and Advertising</h4>
+                <h4>
+                  Clifton Jennings invited you to follow Jaipur SEO Company
+                </h4>
+              </div>
+            </div>
+            <div>
+              <button>Ignore</button>
+              <button>Accept</button>
+            </div>
+          </div>
+          <div class="invitation-body">
+            <div style="display: flex; align-items: center">
+              <img src="images/priya.jpg" />
+              <div>
+                <h4>Page &middot; Marketing and Advertising</h4>
+                <h4>
+                  Clifton Jennings invited you to follow Jaipur SEO Company
+                </h4>
+              </div>
+            </div>
+            <div>
+              <button>Ignore</button>
+              <button>Accept</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="network">
+          <div class="network-header">
+            <h4>People you may know from MNIT Jaipur</h4>
+            <h4>See All</h4>
+          </div>
+          <div class="network-cards">
+            <div class="network-card">
+              <img class="cover" src="images/cover-pic.png" />
+              <img class="user-img" src="images/kishan.jpg" />
+              <div class="about-user">
+                <h5 class="username">Kishan</h5>
+                <p class="user-designation">Undergrad at MNIT Jaipur</p>
+                <p>8 mutual connections</p>
+              </div>
+              <button>Connect</button>
+            </div>
+            <div class="network-card">
+              <img class="cover" src="images/cover-pic.png" />
+              <img class="user-img" src="images/kishan.jpg" />
+              <div class="about-user">
+                <h5 class="username">Kishan</h5>
+                <p class="user-designation">Undergrad at MNIT Jaipur</p>
+                <p>8 mutual connections</p>
+              </div>
+              <button>Connect</button>
+            </div>
+            <div class="network-card">
+              <img class="cover" src="images/cover-pic.png" />
+              <img class="user-img" src="images/kishan.jpg" />
+              <div class="about-user">
+                <h5 class="username">Kishan</h5>
+                <p class="user-designation">Undergrad at MNIT Jaipur</p>
+                <p>8 mutual connections</p>
+              </div>
+              <button>Connect</button>
+            </div>
+            <div class="network-card">
+              <img class="cover" src="images/cover-pic.png" />
+              <img class="user-img" src="images/kishan.jpg" />
+              <div class="about-user">
+                <h5 class="username">Kishan</h5>
+                <p class="user-designation">Undergrad at MNIT Jaipur</p>
+                <p>8 mutual connections</p>
+              </div>
+              <button>Connect</button>
+            </div>
+            <div class="network-card">
+              <img class="cover" src="images/cover-pic.png" />
+              <img class="user-img" src="images/kishan.jpg" />
+              <div class="about-user">
+                <h5 class="username">Kishan</h5>
+                <p class="user-designation">Undergrad at MNIT Jaipur</p>
+                <p>8 mutual connections</p>
+              </div>
+              <button>Connect</button>
+            </div>
+            <div class="network-card">
+              <img class="cover" src="images/cover-pic.png" />
+              <img class="user-img" src="images/kishan.jpg" />
+              <div class="about-user">
+                <h5 class="username">Kishan</h5>
+                <p class="user-designation">Undergrad at MNIT Jaipur</p>
+                <p>8 mutual connections</p>
+              </div>
+              <button>Connect</button>
+            </div>
+            <div class="network-card">
+              <img class="cover" src="images/cover-pic.png" />
+              <img class="user-img" src="images/kishan.jpg" />
+              <div class="about-user">
+                <h5 class="username">Kishan</h5>
+                <p class="user-designation">Undergrad at MNIT Jaipur</p>
+                <p>8 mutual connections</p>
+              </div>
+              <button>Connect</button>
+            </div>
+            <div class="network-card">
+              <img class="cover" src="images/cover-pic.png" />
+              <img class="user-img" src="images/kishan.jpg" />
+              <div class="about-user">
+                <h5 class="username">Kishan</h5>
+                <p class="user-designation">Undergrad at MNIT Jaipur</p>
+                <p>8 mutual connections</p>
+              </div>
+              <button>Connect</button>
+            </div>
+            <div class="network-card">
+              <img class="cover" src="images/cover-pic.png" />
+              <img class="user-img" src="images/kishan.jpg" />
+              <div class="about-user">
+                <h5 class="username">Kishan</h5>
+                <p class="user-designation">Undergrad at MNIT Jaipur</p>
+                <p>8 mutual connections</p>
+              </div>
+              <button>Connect</button>
+            </div>
+            <div class="network-card">
+              <img class="cover" src="images/cover-pic.png" />
+              <img class="user-img" src="images/kishan.jpg" />
+              <div class="about-user">
+                <h5 class="username">Kishan</h5>
+                <p class="user-designation">Undergrad at MNIT Jaipur</p>
+                <p>8 mutual connections</p>
+              </div>
+              <button>Connect</button>
+            </div>
+            <div class="network-card">
+              <img class="cover" src="images/cover-pic.png" />
+              <img class="user-img" src="images/kishan.jpg" />
+              <div class="about-user">
+                <h5 class="username">Kishan</h5>
+                <p class="user-designation">Undergrad at MNIT Jaipur</p>
+                <p>8 mutual connections</p>
+              </div>
+              <button>Connect</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- --------NETWORKS TAB------ -->
+
+    <!-- ----------JOBS TAB--------- -->
+    <div class="container jobs-container hidden--container">
+      <div class="left-sidebar">
+        <div class="job-menu">
+          <div class="menu-item">
+            <img src="images/jobs page/icons8-bookmark-24.png" />
+            <h4>My Jobs</h4>
+          </div>
+          <div class="menu-item">
+            <img src="images/jobs page/icons8-bell-24.png" />
+            <h4>Job Alerts</h4>
+          </div>
+          <div class="menu-item">
+            <img src="images/jobs page/icons8-task-completed-24.png" />
+            <h4>Skills Assessment</h4>
+          </div>
+          <div class="menu-item">
+            <img src="images/jobs page/icons8-page-24.png" />
+            <h4>Interview Prep</h4>
+          </div>
+          <div class="menu-item">
+            <img src="images/jobs page/icons8-blank-page-24.png" />
+            <h4>Resume Builder</h4>
+          </div>
+          <div class="menu-item">
+            <img src="images/jobs page/icons8-youtube-24.png" />
+            <h4>Job seeker guidance</h4>
+          </div>
+          <div class="menu-item">
+            <img src="images/jobs page/icons8-settings-24.png" />
+            <h4>Application settings</h4>
+          </div>
+        </div>
+        <button class="post-btn">
+          <img src="images/jobs page/job post.png" />
+          <h4>Post a Free Job</h4>
+        </button>
+      </div>
+      <div class="main-content">
+        <div class="recent-jobs">
+          <div class="recent-jobs-head">
+            <h3>Recent jobs searches</h3>
+            <h3>Clear</h3>
+          </div>
+          <div class="recent-jobs-body">
+            <div class="job">
+              <h4>campus ambassador &middot; <span>5 new</span></h4>
+              <h5>India &middot; Remote</h5>
+            </div>
+            <hr />
+            <div class="job">
+              <h4>campus ambassador &middot; <span>5 new</span></h4>
+              <h5>India &middot; Remote</h5>
+            </div>
+            <hr />
+            <div class="job">
+              <h4>campus ambassador &middot; <span>5 new</span></h4>
+              <h5>India &middot; Remote</h5>
+            </div>
+            <hr />
+            <div class="job show-more">
+              Show more
+              <img src="images/jobs page/down.png" />
+            </div>
+          </div>
+        </div>
+        <div class="recommended-jobs">
+          <div class="recommended-jobs-head">
+            <h3>Recommended for you</h3>
+            <h5>Based on your profile and search history</h5>
+          </div>
+          <div class="recommended-item">
+            <div class="job-img">
+              <img src="images/jobs page/turing.jpg" />
+              <div class="job-details">
+                <h4>Front End Engineer</h4>
+                <h5>Turing</h5>
+                <p>Gurgaon, Haryana, India (Remote)</p>
+                <p style="display: flex; align-items: center">
+                  <img src="images/jobs page/dart.png" /><span
+                    >Actively recruiting</span
+                  >
+                </p>
+                <p>2 days ago</p>
+              </div>
+            </div>
+            <img
+              style="scale: 1.5; margin-top: -2rem"
+              src="images/jobs page/bookmark2.png"
+            />
+          </div>
+          <div class="recommended-item">
+            <div class="job-img">
+              <img src="images/jobs page/turing.jpg" />
+              <div class="job-details">
+                <h4>Front End Engineer</h4>
+                <h5>Turing</h5>
+                <p>Gurgaon, Haryana, India (Remote)</p>
+                <p style="display: flex; align-items: center">
+                  <img src="images/jobs page/dart.png" /><span
+                    >Actively recruiting</span
+                  >
+                </p>
+                <p>2 days ago</p>
+              </div>
+            </div>
+            <img
+              style="scale: 1.5; margin-top: -2rem"
+              src="images/jobs page/bookmark2.png"
+            />
+          </div>
+          <div class="recommended-item">
+            <div class="job-img">
+              <img src="images/jobs page/turing.jpg" />
+              <div class="job-details">
+                <h4>Front End Engineer</h4>
+                <h5>Turing</h5>
+                <p>Gurgaon, Haryana, India (Remote)</p>
+                <p style="display: flex; align-items: center">
+                  <img src="images/jobs page/dart.png" /><span
+                    >Actively recruiting</span
+                  >
+                </p>
+                <p>2 days ago</p>
+              </div>
+            </div>
+            <img
+              style="scale: 1.5; margin-top: -2rem"
+              src="images/jobs page/bookmark2.png"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="right-sidebar" style="position: sticky">
+        <div class="right-top">
+          <div>
+            <h3>Open to work</h3>
+            <h5>Recommended based on your activity</h5>
+          </div>
+          <div style="display: flex">
+            <p>Show recruiters you are open to new job opportunities</p>
+            <img src="images/user-1.png" />
+          </div>
+          <div>
+            <p>
+              Get more InMails from recruiters when you are #OpenToWork - you
+              control who sees this
+            </p>
+          </div>
+          <a href="#"
+            ><p style="font-weight: 600">Get Started &rightarrow;</p></a
+          >
+        </div>
+        <div class="right-top">
+          <div>
+            <h3>Job seeker guidance</h3>
+            <h5>Recommended based on your activity</h5>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            "
+          >
+            <p>I want to improve my resume</p>
+            <img src="images/jobs page/resume.png" />
+          </div>
+          <div>
+            <p>
+              Explore our curated guide of expert-led courses, such as how to
+              improve your resume and grow your network, to help you land your
+              next opportunity.
+            </p>
+          </div>
+          <a href="#"><p style="font-weight: 600">See more &rightarrow;</p></a>
+        </div>
+        <div class="sidebar-useful-links">
+          <a href="#">About</a>
+          <a href="#">Accesibility</a>
+          <a href="#">Help Center</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Advertising</a>
+          <a href="#">Get the App</a>
+          <a href="#">More</a>
+          <div class="copyright-msg">
+            <img src="images/logo.png" />
+            <p>Linkedin &#169; 2023. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ----------JOBS TAB--------- -->
+
+    <!-- -------NOTIFICATIONS TAB-------- -->
+    <div class="container notification-container hidden--container">
+      <div class="left-sidebar">
+        <div class="manage-notifications">
+          <h3>Manage your notifications</h3>
+          <a href="#"><h4>View Settings</h4></a>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="mc-header">
+          <button>All</button>
+          <button>My Posts</button>
+          <button>Mentions</button>
+        </div>
+        <div class="mc-body">
+          <div class="mc-body-item">
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-top: -2.6rem;
+              "
+            >
+              <p style="align-self: center; font-size: 3rem; font-weight: 600">
+                &middot;
+              </p>
+              <img src="images/notifications page/fcc.jpg" />
+            </div>
+            <div style="margin-right: 0.625rem">
+              <p style="font-weight: 600">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
+                placeat cum, velit, optio dolore corporis porro eligendi,
+                voluptatum similique explicabo perspiciatis vitae itaque tempore
+                perferendis!
+              </p>
+              <p>231 Reactions &middot; 48 Comments</p>
+            </div>
+            <p style="font-size: 0.8rem">
+              51 min <br />
+              ...
+            </p>
+          </div>
+          <div class="mc-body-item">
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-top: -2.6rem;
+              "
+            >
+              <p style="align-self: center; font-size: 3rem; font-weight: 600">
+                &middot;
+              </p>
+              <img src="images/notifications page/fcc.jpg" />
+            </div>
+            <div style="margin-right: 0.625rem">
+              <p style="font-weight: 600">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
+                placeat cum, velit, optio dolore corporis porro eligendi,
+                voluptatum similique explicabo perspiciatis vitae itaque tempore
+                perferendis!
+              </p>
+              <p>231 Reactions &middot; 48 Comments</p>
+            </div>
+            <p style="font-size: 0.8rem">
+              51 min <br />
+              ...
+            </p>
+          </div>
+          <div class="mc-body-item">
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-top: -2.6rem;
+              "
+            >
+              <p style="align-self: center; font-size: 3rem; font-weight: 600">
+                &middot;
+              </p>
+              <img src="images/notifications page/fcc.jpg" />
+            </div>
+            <div style="margin-right: 0.625rem">
+              <p style="font-weight: 600">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
+                placeat cum, velit, optio dolore corporis porro eligendi,
+                voluptatum similique explicabo perspiciatis vitae itaque tempore
+                perferendis!
+              </p>
+              <p>231 Reactions &middot; 48 Comments</p>
+            </div>
+            <p style="font-size: 0.8rem">
+              51 min <br />
+              ...
+            </p>
+          </div>
+          <div class="mc-body-item">
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-top: -2.6rem;
+              "
+            >
+              <p style="align-self: center; font-size: 3rem; font-weight: 600">
+                &middot;
+              </p>
+              <img src="images/notifications page/fcc.jpg" />
+            </div>
+            <div style="margin-right: 0.625rem">
+              <p style="font-weight: 600">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
+                placeat cum, velit, optio dolore corporis porro eligendi,
+                voluptatum similique explicabo perspiciatis vitae itaque tempore
+                perferendis!
+              </p>
+              <p>231 Reactions &middot; 48 Comments</p>
+            </div>
+            <p style="font-size: 0.8rem">
+              51 min <br />
+              ...
+            </p>
+          </div>
+          <div class="mc-body-item">
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-top: -2.6rem;
+              "
+            >
+              <p style="align-self: center; font-size: 3rem; font-weight: 600">
+                &middot;
+              </p>
+              <img src="images/notifications page/fcc.jpg" />
+            </div>
+            <div style="margin-right: 0.625rem">
+              <p style="font-weight: 600">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
+                placeat cum, velit, optio dolore corporis porro eligendi,
+                voluptatum similique explicabo perspiciatis vitae itaque tempore
+                perferendis!
+              </p>
+              <p>231 Reactions &middot; 48 Comments</p>
+            </div>
+            <p style="font-size: 0.8rem">
+              51 min <br />
+              ...
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="right-sidebar">
+        <div class="sidebar-ad">
+          <small>Ad &middot; &middot; &middot;</small>
+          <p>Master the 5 principles of web design</p>
+          <div>
+            <img src="images/user-1.png" alt="" />
+            <img src="images/mi-logo.png" alt="" />
+          </div>
+          <b>Brand and demand in Xiaomi</b>
+          <a href="#" class="ad-link">Learn More</a>
+        </div>
+        <div class="sidebar-useful-links">
+          <a href="#">About</a>
+          <a href="#">Accesibility</a>
+          <a href="#">Help Center</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Advertising</a>
+          <a href="#">Get the App</a>
+          <a href="#">More</a>
+          <div class="copyright-msg">
+            <img src="images/logo.png" />
+            <p>Linkedin &#169; 2023. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- -------NOTIFICATIONS TAB-------- -->
+
+    <!-- -------slidebar---- -->
+    <div class="slidebar">
+      <div class="slidebar-header">
+        <h3>For Business</h3>
+        <h3 id="close-slidebar">X</h3>
+      </div>
+      <div class="slidebar-body">
+        <div class="slidebar-body-item">
+          <h4>Visit More Linkedin Products</h4>
+          <div class="sbi-icons">
+            <a href="#">
+              <img src="images/slidebar/learning.png" />
+              <p>Learning</p>
+            </a>
+            <a href="#">
+              <img src="images/slidebar/talent.png" />
+              <p>Talent Insights</p>
+            </a>
+            <a href="#">
+              <img src="images/slidebar/post job.png" />
+              <p>Post a Job</p>
+            </a>
+            <a href="#">
+              <img src="images/slidebar/advertise.png" />
+              <p>Advertise</p>
+            </a>
+            <a href="#">
+              <img src="images/slidebar/leads.png" />
+              <p>Learning</p>
+            </a>
+            <a href="#">
+              <img src="images/slidebar/groups.png" />
+              <p>Groups</p>
+            </a>
+            <a href="#">
+              <img src="images/slidebar/services.png" />
+              <p>Services Marketplace</p>
+            </a>
+          </div>
+        </div>
+        <div class="slidebar-body-item">
+          <h4>Linkedin Business Services</h4>
+          <div class="sbi-list">
+            <a href="#">
+              <h5>Talent Solutions</h5>
+              <h6>Find, attract and recruit talent</h6>
+            </a>
+            <a href="#">
+              <h5>Sales Solutions</h5>
+              <h6>Unlock sales opportunities</h6>
+            </a>
+            <a href="#">
+              <h5>Post a job for free</h5>
+              <h6>Get your job in front of quality candidates</h6>
+            </a>
+            <a href="#">
+              <h5>Marketing Solutions</h5>
+              <h6>Accquire customers and grow your business</h6>
+            </a>
+            <a href="#">
+              <h5>Learning Solutions</h5>
+              <h6>Develop talent across organizations</h6>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- -------slidebar---- -->
+
+    <!-- --------MODAL------ -->
+
+    <div class="overlay-slidebar hidden"></div>
+    <div class="overlay hidden"></div>
+
+    <div class="modal hidden modal-photo">
+      <div class="modal-element modal-head">
+        <h3>Edit your photo</h3>
+        <img class="btn--close-modal closeModalPhoto" src="images/close.png" />
+      </div>
+      <div class="modal-element modal-body">Select images to share</div>
+      <div class="modal-element modal-foot">
+        <button class="modal-foot-btn">Cancel</button>
+        <button class="modal-foot-btn">Done</button>
+      </div>
+    </div>
+
+    <div class="modal hidden modal-video">
+      <div class="modal-element modal-head">
+        <h3>Select/Edit your video</h3>
+        <img class="btn--close-modal closeModalVideo" src="images/close.png" />
+      </div>
+      <div class="modal-element modal-body">Select video to share</div>
+      <div class="modal-element modal-foot">
+        <button class="modal-foot-btn">Cancel</button>
+        <button class="modal-foot-btn">Done</button>
+      </div>
+    </div>
+
+    <div class="modal hidden modal-job">
+      <div class="modal-element modal-head">
+        <h3>Tell us who you're hiring</h3>
+        <img class="btn--close-modal closeModalJob" src="images/close.png" />
+      </div>
+      <div class="modal-element modal-body modal-body-job">
+        <form class="job-form">
+          <div>
+            <label for="job-title">Job title</label>
+            <input
+              type="text"
+              placeholder="Add the title you're hiring for"
+              id="job-title"
+            />
+          </div>
+          <div>
+            <label for="company">Company</label>
+            <input type="text" placeholder="add company" id="company" />
+          </div>
+          <div>
+            <label for="place-type">Work-place type</label>
+            <select>
+              <option>On-site</option>
+              <option>Hybrid</option>
+              <option>Remote</option>
+            </select>
+          </div>
+          <div>
+            <label for="location">Job location</label>
+            <input type="text" placeholder="mention the location" />
+          </div>
+          <div>
+            <label for="location">Job location</label>
+            <select>
+              <option>Full time</option>
+              <option>Part time</option>
+              <option>Contract</option>
+              <option>Temporary</option>
+              <option>Other</option>
+              <option>Volunteer</option>
+              <option>Internship</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-element modal-foot">
+        <button class="modal-foot-btn">Cancel</button>
+        <button class="modal-foot-btn">Done</button>
+      </div>
+    </div>
+
+    <div class="modal hidden modal-start-post">
+      <div class="modal-element modal-head">
+        <div class="modal-user-info" style="display: flex">
+          <img
+            style="width: 3rem; border-radius: 50%"
+            src="images/kishan.jpg"
+          />
+          <div style="display: flex; flex-direction: column; margin-left: 1rem">
+            <h3>Kishan Srivastava</h3>
+            <h5>Post to Anyone</h5>
+          </div>
+          <img
+            style="scale: 0.8; margin-left: 1rem; margin-top: -1rme"
+            src="images/down arrow.png"
+          />
+        </div>
+        <img class="btn--close-modal closeStartPost" src="images/close.png" />
+      </div>
+      <div class="modal-element modal-body">
+        <textarea
+          class="startPostText"
+          name="textArea"
+          id="writePost"
+          cols="30"
+          rows="10"
+          placeholder="What do you want to talk about?"
+        ></textarea>
+      </div>
+      <div class="modal-element modal-foot startPostFoot">
+        <ul>
+          <li><span>tooltip</span><img src="images/add photo.png" /></li>
+          <li><span>tooltip</span><img src="images/add video.png" /></li>
+          <li><span>tooltip</span><img src="images/create event.png" /></li>
+          <li><span>tooltip</span><img src="images/dots.png" /></li>
+        </ul>
+        <hr />
+      </div>
+      <button class="btn-post">Post</button>
+    </div>
+
+    <!-- --------MODAL------ -->
+
+    <script>
+      let profileMenu = document.getElementById("profileMenu");
+      function toggleMenu() {
+        profileMenu.classList.toggle("open-menu");
+      }
+    </script>
+    <script>
+      let sideActivity = document.getElementById("sidebarActivity");
+      let moreLink = document.getElementById("showMoreLink");
+
+      function toggleActivity() {
+        sideActivity.classList.toggle("open-activity");
+
+        if (sideActivity.classList.contains("open-activity")) {
+          moreLink.innerHTML = "Show less <b> - </b>";
+        } else {
+          moreLink.innerHTML = "Show more <b> + </b>";
+        }
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
